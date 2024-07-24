@@ -12,4 +12,6 @@ with sync_playwright() as playwright:
 
     page.get_by_role('link', name="Docs").click()
 
+    print(page.url)
+
     page.wait_for_timeout(10_000)
