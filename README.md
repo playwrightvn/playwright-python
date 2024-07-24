@@ -33,3 +33,12 @@ page.wait_for_timeout(10_000)
 ```bash
 python app.py
 ```
+
+## Day 2: Locators
+- Có thể chạy python ở interactive mode
+    - Mở terminal lên
+    - Active `. venv/bin/activate`
+    - Gõ lệnh: `python`
+    - Từ đây có thể gõ từng câu lệnh cho chạy.
+- Nếu dùng button, có thể dùng lệnh `.highlight()`
+- Kết thúc, dùng lệnh: `browser.close()`, `playwright.stop()`
