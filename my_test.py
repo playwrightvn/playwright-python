@@ -5,6 +5,6 @@ with sync_playwright() as playwright:
   
   page = browser.new_page()
   
-  page.goto('https://material.playwrightvn.com')
+  page.goto('https://material.playwrightvn.com/01-xpath-register-page.html')
   
   page.wait_for_timeout(10_000)
