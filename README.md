@@ -42,3 +42,46 @@ python app.py
     - Từ đây có thể gõ từng câu lệnh cho chạy.
 - Nếu dùng button, có thể dùng lệnh `.highlight()`
 - Kết thúc, dùng lệnh: `browser.close()`, `playwright.stop()`
+
+## Day 3: Events
+- Auto waiting là một tính năng rất mạnh của Playwright.
+- Ví dụ với auto wait element:
+    - visible
+    - enable
+    - stable
+- Page navigation
+```python
+page.goto('', wait_util='loaded')
+```
+- Load & domcontentloaded
+    - Load: gồm cả image load xong
+    - domcontentloađe: không gồm image load xong.
+    - commit: chỉ cần server trả về là xong.
+    - networkidle: = network in & network out stop.
+- Custom waiting:
+    - element.wait_for
+- Event listener
+    - page.on('event_name')
+        - example w: page load, request, file_chooser
+- Dialog
+    - alert
+    - prompt
+    - confirmation
+- Download: 2 cách
+    - page.on
+    ```python
+    def on_download(download):
+        download.save_as("abc.png")
+
+    page.on("download", on_download)
+    ```
+    - handle as object
+    ```python
+    with page.expect_download() as download_info:
+        btn.click()
+    download = download_info.value
+    download.save_as('abc.png')
+    ```
+    - page.once
+- Sync và async
+
